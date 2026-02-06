@@ -1,6 +1,16 @@
 # tigro-fedora-kickstart
 Some kickstarts to creare custom Live Images
 
+# What changed?
+1. Added Tigro copr repo: tigro/fedora43
+2. Added Google Chrome, Microsoft Edge, OnlyOffice
+3. Added openh264 to disk
+4. Added new GNOME extensions: dash-to-panel, dash-to-dock, ddterm, clipboard-history, desktop-icons-ng, arcmenu
+5. Added desktop style configurator from MSVSPhere
+6. Added Yandex (disk, mail, calendar) support in Gnome Online Accounts
+7. Sphere Image Writer (fork of Fedora Media Writer)
+8. Added Multimedia and other
+
 # Prepare
 ```
 sudo dnf copr enable tigro/fedora43
