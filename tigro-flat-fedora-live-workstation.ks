@@ -319,6 +319,7 @@ gstreamer1-plugins-good-gtk
 gstreamer1-plugins-ugly
 gstreamer1-plugins-ugly-free
 gstreamer1-rtsp-server
+gstreamer1-vaapi
 hardinfo2
 libavcodec-freeworld
 mc
@@ -351,5 +352,8 @@ evince-previewer
 evince-thumbnailer
 gedit
 gedit-plugins
+
+# Video accel
+libva-intel-hybrid-driver
 
 %end
