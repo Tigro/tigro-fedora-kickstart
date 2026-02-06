@@ -265,7 +265,6 @@ aajohan-comfortaa-fonts
 anaconda-install-env-deps
 anaconda-live
 anaconda-gui
-anaconda-webui
 dracut-live
 glibc-all-langpacks
 gnome-initial-setup
