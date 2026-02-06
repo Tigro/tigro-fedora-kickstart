@@ -29,7 +29,7 @@ sudo livemedia-creator \
     --project="Fedora Tigro Workstation" \
     --make-iso --volid "Fedora 43 x86_64" \
     --iso-only \
-    --iso-name Fedora-Tigro-Workstation-Live-43.20260205-x86_64-1.1.x86_64.iso \
+    --iso-name Fedora-Tigro-Workstation-Live-43.$(date +%Y%m%d)-x86_64-1.1.x86_64.iso \
     --releasever=43 \
     --nomacboot \
     --extra-boot-args "rootfstype=auto ro rhgb rd.luks=0 rd.md=0" \
