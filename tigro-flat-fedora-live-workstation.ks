@@ -352,6 +352,10 @@ evince-thumbnailer
 gedit
 gedit-plugins
 
+# Default editor
+-nano-default-editor
+vim-default-editor
+
 # Video accel
 libva-intel-hybrid-driver
 
