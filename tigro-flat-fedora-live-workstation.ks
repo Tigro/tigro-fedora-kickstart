@@ -256,6 +256,11 @@ rm -f /tmp/onlyoffice-repo.noarch.rpm
 sed -i 's@org.mozilla.firefox.desktop@google-chrome.desktop@g' \
 	/usr/share/applications/gnome-mimeapps.list
 
+# Sudo w/o password
+cat /etc/sudoers.d/99-local << EOF
+%wheel ALL=(ALL) NOPASSWD: ALL
+EOF
+
 %end
 
 %packages
