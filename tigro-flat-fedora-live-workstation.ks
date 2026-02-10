@@ -257,7 +257,7 @@ sed -i 's@org.mozilla.firefox.desktop@google-chrome.desktop@g' \
 	/usr/share/applications/gnome-mimeapps.list
 
 # Sudo w/o password
-cat /etc/sudoers.d/99-nopasswd << EOF
+cat > /etc/sudoers.d/99-nopasswd << EOF
 %wheel ALL=(ALL) NOPASSWD: ALL
 EOF
 
