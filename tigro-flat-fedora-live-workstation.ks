@@ -261,6 +261,12 @@ cat > /etc/sudoers.d/99-nopasswd << EOF
 %wheel ALL=(ALL) NOPASSWD: ALL
 EOF
 
+# DNF fastest mirror
+cat >> /etc/dnf/dnf.conf << EOF
+fastestmirror=True
+max_parallel_downloads=10
+EOF
+
 %end
 
 %packages
