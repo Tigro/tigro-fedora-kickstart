@@ -28,7 +28,7 @@ rootpw --iscrypted --lock locked
 # SELinux configuration
 selinux --enforcing
 # System services
-services --disabled="sshd" --enabled="NetworkManager,ModemManager"
+services --enabled="NetworkManager,ModemManager,sshd"
 # System timezone
 timezone Europe/Moscow
 # Use network installation
