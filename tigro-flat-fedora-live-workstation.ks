@@ -256,6 +256,12 @@ rm -f /tmp/onlyoffice-repo.noarch.rpm
 sed -i 's@org.mozilla.firefox.desktop@google-chrome.desktop@g' \
 	/usr/share/applications/gnome-mimeapps.list
 
+# Update PS1 for bash prompt
+sed '/export SYSTEMD_PAGER=/a\
+\
+# Modern colors from 1998 year\
+export PS1="\[\e[1;33m\][\[\e[1;32m\]\u\[\e[1;95m\]@\[\e[1;31m\]\h \[\e[01;36m\]\W\[\e[1;33m\]]$ \[\e[m\]"' /etc/skel/.bashrc
+
 # Sudo w/o password
 cat > /etc/sudoers.d/99-nopasswd << EOF
 %wheel ALL=(ALL) NOPASSWD: ALL
