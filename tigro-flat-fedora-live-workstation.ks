@@ -12,19 +12,19 @@ network  --bootproto=dhcp --device=link --activate
 shutdown
 repo --name=fedora --mirrorlist=https://mirrors.fedoraproject.org/mirrorlist?repo=fedora-$releasever&arch=$basearch
 repo --name=lastup --mirrorlist=https://mirrors.fedoraproject.org/mirrorlist?repo=updates-released-f$releasever&arch=$basearch
-repo --name="rpmfusionfree" --baseurl=https://download1.rpmfusion.org/free/fedora/releases/$releasever/Everything/$basearch/os/
-repo --name="rpmfusionfreeupdates" --baseurl=https://download1.rpmfusion.org/free/fedora/updates/$releasever/$basearch/
-repo --name="rpmfusionnonfree" --baseurl=https://download1.rpmfusion.org/nonfree/fedora/releases/$releasever/Everything/$basearch/os/
-repo --name="rpmfusionnonfreeupdates" --baseurl=https://download1.rpmfusion.org/nonfree/fedora/updates/$releasever/$basearch/
+repo --name="rpmfusionfree" --baseurl=https://download1.rpmfusion.org/free/fedora/development/44/Everything/x86_64/os/
+#repo --name="rpmfusionfreeupdates" --baseurl=https://download1.rpmfusion.org/free/fedora/updates/$releasever/$basearch/
+repo --name="rpmfusionnonfree" --baseurl=https://download1.rpmfusion.org/nonfree/fedora/development/44/Everything/x86_64/os/
+#repo --name="rpmfusionnonfreeupdates" --baseurl=https://download1.rpmfusion.org/nonfree/fedora/updates/$releasever/$basearch/
 repo --name="rpmfusionnvidiadriver" --baseurl=https://download1.rpmfusion.org/nonfree/fedora/nvidia-driver/$releasever/$basearch/
 repo --name="rpmfusionsteam" --baseurl=https://download1.rpmfusion.org/nonfree/fedora/steam/$releasever/$basearch/
-repo --name="tigro" --baseurl=https://download.copr.fedorainfracloud.org/results/tigro/fedora43/fedora-$releasever-$basearch/
+repo --name="tigro" --baseurl=https://download.copr.fedorainfracloud.org/results/tigro/fedora$releasever/fedora-$releasever-$basearch/
 repo --name="openh264" --baseurl=https://download.copr.fedorainfracloud.org/results/tigro/unpatent/fedora-$releasever-$basearch/
 repo --name="chrome" --baseurl=https://dl.google.com/linux/chrome/rpm/stable/x86_64
 repo --name="edge" --baseurl=https://packages.microsoft.com/yumrepos/edge/
 repo --name="onlyoffice" --baseurl=https://download.onlyoffice.com/repo/centos/main/noarch/
 # Root password
-rootpw --iscrypted --lock locked
+#rootpw --iscrypted --lock locked
 # SELinux configuration
 selinux --enforcing
 # System services
@@ -104,14 +104,14 @@ sed -i 's/^livesys_session=.*/livesys_session="gnome"/' /etc/sysconfig/livesys
 %end
 
 %post
-cat > /etc/yum.repos.d/copr:copr.fedorainfracloud.org:tigro:fedora43.repo << EOF
-[copr:copr.fedorainfracloud.org:tigro:fedora43]
-name=Copr repo for fedora43 owned by tigro
-baseurl=https://download.copr.fedorainfracloud.org/results/tigro/fedora43/fedora-\$releasever-\$basearch/
+cat > /etc/yum.repos.d/copr:copr.fedorainfracloud.org:tigro:fedora.repo << EOF
+[copr:copr.fedorainfracloud.org:tigro:fedora]
+name=Copr repo for fedora\$releasever owned by tigro
+baseurl=https://download.copr.fedorainfracloud.org/results/tigro/fedora\$releasever/fedora-\$releasever-\$basearch/
 type=rpm-md
 skip_if_unavailable=True
 gpgcheck=1
-gpgkey=https://download.copr.fedorainfracloud.org/results/tigro/fedora43/pubkey.gpg
+gpgkey=https://download.copr.fedorainfracloud.org/results/tigro/fedora\$releasever/pubkey.gpg
 repo_gpgcheck=0
 enabled=1
 enabled_metadata=1
@@ -427,7 +427,7 @@ vim
 google-chrome-stable
 
 # onlyoffice
-onlyoffice-desktopeditors
+#onlyoffice-desktopeditors
 
 # obsolete packages
 eog
