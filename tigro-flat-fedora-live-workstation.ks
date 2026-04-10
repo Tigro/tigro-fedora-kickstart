@@ -22,7 +22,7 @@ repo --name="tigro" --baseurl=https://download.copr.fedorainfracloud.org/results
 repo --name="openh264" --baseurl=https://download.copr.fedorainfracloud.org/results/tigro/unpatent/fedora-$releasever-$basearch/
 repo --name="chrome" --baseurl=https://dl.google.com/linux/chrome/rpm/stable/x86_64
 repo --name="edge" --baseurl=https://packages.microsoft.com/yumrepos/edge/
-repo --name="onlyoffice" --baseurl=https://download.onlyoffice.com/repo/centos/main/noarch/
+repo --name="onlyoffice" --baseurl=http://download.onlyoffice.com/repo/centos/main/noarch/
 # Root password
 #rootpw --iscrypted --lock locked
 # SELinux configuration
@@ -250,7 +250,10 @@ fc-cache
 # install onlyoffice repo files
 wget https://download.onlyoffice.com/repo/centos/main/noarch/onlyoffice-repo.noarch.rpm -O - > /tmp/onlyoffice-repo.noarch.rpm
 rpm -ihv /tmp/onlyoffice-repo.noarch.rpm
-rm -f /tmp/onlyoffice-repo.noarch.rpm
+# workarround to install onlyoffice
+wget https://download.onlyoffice.com/repo/centos/main/noarch/onlyoffice-desktopeditors-9.3.1.x86_64.rpm -O - > /tmp/oo.x86_64.rpm
+rpm -ihv /tmp/oo.x86_64.rpm
+rm -f /tmp/onlyoffice-repo.noarch.rpm /tmp/oo.x86_64.rpm
 
 # Set chromium as browser by default
 sed -i 's@org.mozilla.firefox.desktop@google-chrome.desktop@g' \
@@ -428,6 +431,13 @@ google-chrome-stable
 
 # onlyoffice
 #onlyoffice-desktopeditors
+# is needed by onlyoffice-desktopeditors
+boost-filesystem
+dejavu-sans-fonts
+dejavu-sans-mono-fonts
+dejavu-serif-fonts
+libXScrnSaver
+liberation-narrow-fonts
 
 # obsolete packages
 eog
