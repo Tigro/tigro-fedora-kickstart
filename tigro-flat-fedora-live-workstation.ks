@@ -130,6 +130,19 @@ enabled=1
 enabled_metadata=1
 EOF
 
+cat > /etc/yum.repos.d/copr:copr.fedorainfracloud.org:tigro:amneziawg.repo << EOF
+[copr:copr.fedorainfracloud.org:tigro:amneziawg]
+name=Copr repo for amneziawg owned by tigro
+baseurl=https://download.copr.fedorainfracloud.org/results/tigro/amneziawg/fedora-$releasever-$basearch/
+type=rpm-md
+skip_if_unavailable=True
+gpgcheck=1
+gpgkey=https://download.copr.fedorainfracloud.org/results/tigro/amneziawg/pubkey.gpg
+repo_gpgcheck=0
+enabled=1
+enabled_metadata=1
+EOF
+
 cat > /usr/share/glib-2.0/schemas/org.gnome.shell.extensions.arcmenu.gschema.override << EOF
 [org.gnome.shell.extensions.arcmenu]
 custom-menu-button-icon-size=40.0
