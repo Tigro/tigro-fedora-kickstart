@@ -133,7 +133,7 @@ EOF
 cat > /etc/yum.repos.d/copr:copr.fedorainfracloud.org:tigro:amneziawg.repo << EOF
 [copr:copr.fedorainfracloud.org:tigro:amneziawg]
 name=Copr repo for amneziawg owned by tigro
-baseurl=https://download.copr.fedorainfracloud.org/results/tigro/amneziawg/fedora-$releasever-$basearch/
+baseurl=https://download.copr.fedorainfracloud.org/results/tigro/amneziawg/fedora-\$releasever-\$basearch/
 type=rpm-md
 skip_if_unavailable=True
 gpgcheck=1
