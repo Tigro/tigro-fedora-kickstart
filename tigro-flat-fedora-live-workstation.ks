@@ -12,10 +12,10 @@ network  --bootproto=dhcp --device=link --activate
 shutdown
 repo --name=fedora --mirrorlist=https://mirrors.fedoraproject.org/mirrorlist?repo=fedora-$releasever&arch=$basearch
 repo --name=lastup --mirrorlist=https://mirrors.fedoraproject.org/mirrorlist?repo=updates-released-f$releasever&arch=$basearch
-repo --name="rpmfusionfree" --baseurl=https://download1.rpmfusion.org/free/fedora/development/44/Everything/x86_64/os/
-#repo --name="rpmfusionfreeupdates" --baseurl=https://download1.rpmfusion.org/free/fedora/updates/$releasever/$basearch/
-repo --name="rpmfusionnonfree" --baseurl=https://download1.rpmfusion.org/nonfree/fedora/development/44/Everything/x86_64/os/
-#repo --name="rpmfusionnonfreeupdates" --baseurl=https://download1.rpmfusion.org/nonfree/fedora/updates/$releasever/$basearch/
+repo --name="rpmfusionfree" --baseurl=https://download1.rpmfusion.org/free/fedora/releases/$releasever/Everything/$basearch/os/
+repo --name="rpmfusionfreeupdates" --baseurl=https://download1.rpmfusion.org/free/fedora/updates/$releasever/$basearch/
+repo --name="rpmfusionnonfree" --baseurl=https://download1.rpmfusion.org/nonfree/fedora/releases/$releasever/Everything/$basearch/os/
+repo --name="rpmfusionnonfreeupdates" --baseurl=https://download1.rpmfusion.org/nonfree/fedora/updates/$releasever/$basearch/
 repo --name="rpmfusionnvidiadriver" --baseurl=https://download1.rpmfusion.org/nonfree/fedora/nvidia-driver/$releasever/$basearch/
 repo --name="rpmfusionsteam" --baseurl=https://download1.rpmfusion.org/nonfree/fedora/steam/$releasever/$basearch/
 repo --name="tigro" --baseurl=https://download.copr.fedorainfracloud.org/results/tigro/fedora$releasever/fedora-$releasever-$basearch/
