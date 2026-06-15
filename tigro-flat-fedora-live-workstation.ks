@@ -470,7 +470,5 @@ libva-intel-hybrid-driver
 
 # New fonts
 iosevka-fonts
-iosevka-ss08-fonts
-iosevka-slab-fonts
 
 %end
