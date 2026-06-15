@@ -243,8 +243,8 @@ win-view-sidebar='<Primary>grave'
 
 [profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
 background-color='#2E2E34343636'
-default-size-columns=90
-font='Monaco 14'
+default-size-columns=105
+font='Iosevka Term 14'
 foreground-color='#EEEEEEEEECEC'
 login-shell=true
 palette=['#2E2E34343636', '#CCCC00000000', '#4E4E9A9A0606', '#FFFFE5E55353', '#34346565A4A4', '#EDEDD4D40000', '#060698209A9A', '#D3D3D7D7CFCF', '#555557575353', '#EFEF29292929', '#EBEBFFFF5F5F', '#FFFFE5E55353', '#72729F9FCFCF', '#CCCC15158585', '#3434E2E2E2E2', '#EEEEEEEEECEC']
@@ -264,7 +264,7 @@ fc-cache
 wget https://download.onlyoffice.com/repo/centos/main/noarch/onlyoffice-repo.noarch.rpm -O - > /tmp/onlyoffice-repo.noarch.rpm
 rpm -ihv /tmp/onlyoffice-repo.noarch.rpm
 # workarround to install onlyoffice
-wget https://download.onlyoffice.com/repo/centos/main/noarch/onlyoffice-desktopeditors-9.3.1.x86_64.rpm -O - > /tmp/oo.x86_64.rpm
+wget https://download.onlyoffice.com/repo/centos/main/noarch/onlyoffice-desktopeditors-9.4.0.x86_64.rpm -O - > /tmp/oo.x86_64.rpm
 rpm -ihv /tmp/oo.x86_64.rpm
 rm -f /tmp/onlyoffice-repo.noarch.rpm /tmp/oo.x86_64.rpm
 
@@ -467,5 +467,10 @@ vim-default-editor
 
 # Video accel
 libva-intel-hybrid-driver
+
+# New fonts
+iosevka-fonts
+iosevka-ss08-fonts
+iosevka-slab-fonts
 
 %end
