@@ -30,7 +30,7 @@ sudo livemedia-creator \
     --make-iso --volid "Fedora 44 x86_64" \
     --iso-only \
     --iso-name Fedora-Tigro-Workstation-Live-44.$(date +%Y%m%d)-x86_64-1.1.x86_64.iso \
-    --releasever=43 \
+    --releasever=44 \
     --nomacboot \
     --extra-boot-args "rootfstype=auto ro rhgb rd.luks=0 rd.md=0" \
     --lorax-templates /usr/share/lorax/templates.d/99-generic/ \
