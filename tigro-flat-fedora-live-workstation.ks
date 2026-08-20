@@ -24,7 +24,11 @@ repo --name="chrome" --baseurl=https://dl.google.com/linux/chrome/rpm/stable/x86
 repo --name="edge" --baseurl=https://packages.microsoft.com/yumrepos/edge/
 repo --name="onlyoffice" --baseurl=http://download.onlyoffice.com/repo/centos/main/noarch/
 # Root password
-#rootpw --iscrypted --lock locked
+# Trouble with /usr/lib64/python3.14/site-packages/pyanaconda/core/users.py
+# Comment
+# if proc.returncode != 0:
+        #    raise OSError("Unable to set password for new user: status=%s" % proc.returncode)
+rootpw --iscrypted --lock locked
 # SELinux configuration
 selinux --enforcing
 # System services
