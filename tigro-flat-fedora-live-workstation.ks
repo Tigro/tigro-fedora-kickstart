@@ -50,6 +50,21 @@ part / --fstype="ext4" --size=12120
 #part / --size=8576
 
 %post
+# Change default browser
+cat > /etc/skel/.config/mimeapps.list << EOF
+[Default Applications]
+x-scheme-handler/http=com.google.Chrome.desktop
+application/xhtml+xml=com.google.Chrome.desktop
+text/html=com.google.Chrome.desktop
+x-scheme-handler/https=com.google.Chrome.desktop
+
+[Added Associations]
+x-scheme-handler/http=com.google.Chrome.desktop;org.mozilla.firefox.desktop;
+application/xhtml+xml=com.google.Chrome.desktop;org.mozilla.firefox.desktop;
+text/html=com.google.Chrome.desktop;org.mozilla.firefox.desktop;
+x-scheme-handler/https=com.google.Chrome.desktop;org.mozilla.firefox.desktop;
+EOF
+
 # Enable livesys services
 systemctl enable livesys.service
 systemctl enable livesys-late.service
