@@ -401,6 +401,7 @@ livesys-scripts
 -sdubby
 # Tigro
 -gnome-tour
+-mediawriter
 -pipewire-codec-aptx
 NetworkManager-openconnect-gnome
 celluloid
