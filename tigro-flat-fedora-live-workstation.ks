@@ -372,6 +372,8 @@ anaconda-install-env-deps
 anaconda-live
 anaconda-gui
 dracut-live
+f44-backgrounds-base
+f44-backgrounds-gnome
 glibc-all-langpacks
 gnome-initial-setup
 kernel
