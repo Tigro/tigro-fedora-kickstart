@@ -12,14 +12,11 @@ network  --bootproto=dhcp --device=link --activate
 shutdown
 repo --name=fedora --mirrorlist=https://mirrors.fedoraproject.org/mirrorlist?repo=fedora-$releasever&arch=$basearch
 repo --name=lastup --mirrorlist=https://mirrors.fedoraproject.org/mirrorlist?repo=updates-released-f$releasever&arch=$basearch
-repo --name="rpmfusionfree" --baseurl=https://download1.rpmfusion.org/free/fedora/releases/$releasever/Everything/$basearch/os/
-repo --name="rpmfusionfreeupdates" --baseurl=https://download1.rpmfusion.org/free/fedora/updates/$releasever/$basearch/
-repo --name="rpmfusionnonfree" --baseurl=https://download1.rpmfusion.org/nonfree/fedora/releases/$releasever/Everything/$basearch/os/
-repo --name="rpmfusionnonfreeupdates" --baseurl=https://download1.rpmfusion.org/nonfree/fedora/updates/$releasever/$basearch/
+repo --name="rpmfusionfree" --baseurl=https://download1.rpmfusion.org/free/fedora/development/$releasever/Everything/$basearch/os/
+repo --name="rpmfusionnonfree" --baseurl=https://download1.rpmfusion.org/nonfree/fedora/development/$releasever/Everything/$basearch/os/
 repo --name="rpmfusionnvidiadriver" --baseurl=https://download1.rpmfusion.org/nonfree/fedora/nvidia-driver/$releasever/$basearch/
 repo --name="rpmfusionsteam" --baseurl=https://download1.rpmfusion.org/nonfree/fedora/steam/$releasever/$basearch/
 repo --name="tigro" --baseurl=https://download.copr.fedorainfracloud.org/results/tigro/fedora$releasever/fedora-$releasever-$basearch/
-repo --name="openh264" --baseurl=https://download.copr.fedorainfracloud.org/results/tigro/unpatent/fedora-$releasever-$basearch/
 repo --name="chrome" --baseurl=https://dl.google.com/linux/chrome/rpm/stable/x86_64
 repo --name="edge" --baseurl=https://packages.microsoft.com/yumrepos/edge/
 repo --name="onlyoffice" --baseurl=http://download.onlyoffice.com/repo/centos/main/noarch/
@@ -46,7 +43,7 @@ zerombr
 # Partition clearing information
 clearpart --all
 # Disk partitioning information
-part / --fstype="ext4" --size=12120
+part / --fstype="ext4" --size=14120
 #part / --size=8576
 
 %post
@@ -266,10 +263,10 @@ fc-cache
 
 # install onlyoffice repo files
 wget https://download.onlyoffice.com/repo/centos/main/noarch/onlyoffice-repo.noarch.rpm -O - > /tmp/onlyoffice-repo.noarch.rpm
-rpm -ihv /tmp/onlyoffice-repo.noarch.rpm
+rpm -ihv --nosignature --nodigest /tmp/onlyoffice-repo.noarch.rpm
 # workarround to install onlyoffice
 wget https://download.onlyoffice.com/repo/centos/main/noarch/onlyoffice-desktopeditors-9.4.0.x86_64.rpm -O - > /tmp/oo.x86_64.rpm
-rpm -ihv /tmp/oo.x86_64.rpm
+rpm -ihv --nosignature --nodigest /tmp/oo.x86_64.rpm
 rm -f /tmp/onlyoffice-repo.noarch.rpm /tmp/oo.x86_64.rpm
 
 # Set chromium as browser by default
@@ -389,7 +386,6 @@ livesys-scripts
 -sdubby
 # Tigro
 -gnome-tour
--mediawriter
 -pipewire-codec-aptx
 NetworkManager-openconnect-gnome
 celluloid
