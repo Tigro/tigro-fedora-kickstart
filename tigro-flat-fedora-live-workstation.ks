@@ -492,4 +492,8 @@ libva-intel-hybrid-driver
 # New fonts
 iosevka-fonts
 
+# NetworkManager-amneziawg
+NetworkManager-amneziawg
+NetworkManager-amneziawg-gnome
+
 %end
